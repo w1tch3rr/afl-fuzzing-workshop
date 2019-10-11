@@ -10,6 +10,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "shell", inline: <<-SHELL
+    echo "nameserver 8.8.8.8" | tee /etc/resolv.conf > /dev/null
     apt-get update
     DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential wget gdb clang cmake openssl libssl-dev
     mkdir /tmp/afl-install && cd /tmp/afl-install
