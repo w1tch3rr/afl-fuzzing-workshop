@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
     make
     cd llvm_mode
     LLVM_CONFIG=/usr/bin/llvm-config-6.0 make
-    cd .. && make install
+    cd .. && sudo make install
 
     cd /tmp
     wget https://gitlab.com/akihe/radamsa/uploads/a2228910d0d3c68d19c09cee3943d7e5/radamsa-0.6.c.gz
